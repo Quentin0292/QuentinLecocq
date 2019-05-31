@@ -5,34 +5,23 @@ const Form = () => {
   return(
     <div>
       <h1>Formulaire de Contact</h1>
-      <form name="contact" method="POST" data-netlify="true">
+      <form name="contact" method="POST" action="/success" data-netlify="true" data-netlify-honeypot="bot-field">
         <div className="field">
-          <label className="label">Name</label>
+          <label htmlFor="name" className="label">Name</label>
           <div>
-            <input className="input" type="text" name="name" placeholder="text input"/>
+            <input className="input" type="text" name="name" id="name" placeholder="text input"/>
           </div>
         </div>
         <div className="field">
-          <label className="label">Email</label>
+          <label htmlFor="email" className="label">Email</label>
           <div className="control">
-            <input type="email" className="input" name="email" placeholder="Email input"/>
+            <input type="email" className="input" name="email" id="email" placeholder="Email input"/>
           </div>
         </div>
         <div className="field">
-          <label className="label">Subject</label>
+          <label htmlFor="message" className="label">Message</label>
           <div className="control">
-            <div className="select">
-              <select>
-                <option value="job">Job</option>
-                <option value="perso">Perso</option>
-              </select>
-            </div>
-          </div>
-        </div>
-        <div className="field">
-          <label className="label">Message</label>
-          <div className="control">
-            <textarea className="textarea" name="message" id="" cols="30" rows="10"></textarea>
+            <textarea className="textarea" name="message" id="message" cols="30" rows="10"></textarea>
           </div>
         </div>
         <div className="field">
@@ -43,7 +32,6 @@ const Form = () => {
             </label>
           </div>
         </div>
-        <div data-netlify-recaptcha="true"></div>
         <div className="field">
           <div className="control">
             <button type="submit" className="button is-link">Send</button>
