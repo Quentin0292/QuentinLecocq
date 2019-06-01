@@ -5,38 +5,25 @@ const Form = () => {
   return(
     <div>
       <h1>Formulaire de Contact</h1>
-      <form name="contact" method="POST" action="/success" data-netlify="true" data-netlify-honeypot="bot-field">
-        <div className="field">
-          <label htmlFor="name" className="label">Name</label>
-          <div>
-            <input className="input" type="text" name="name" id="name" placeholder="text input"/>
-          </div>
-        </div>
-        <div className="field">
-          <label htmlFor="email" className="label">Email</label>
-          <div className="control">
-            <input type="email" className="input" name="email" id="email" placeholder="Email input"/>
-          </div>
-        </div>
-        <div className="field">
-          <label htmlFor="message" className="label">Message</label>
-          <div className="control">
-            <textarea className="textarea" name="message" id="message" cols="30" rows="10"></textarea>
-          </div>
-        </div>
-        <div className="field">
-          <div className="control">
-            <label className="checkbox">
-              <input type="checkbox"/>
-              {` `}I agree to the <a href="#">terms and conditions</a>
-            </label>
-          </div>
-        </div>
-        <div className="field">
-          <div className="control">
-            <button type="submit" className="button is-link">Send</button>
-          </div>
-        </div>
+      <form name="contact" method="POST" data-netlify="true">
+        <p>
+          <label>Your Name: <input type="text" name="name" /></label>   
+        </p>
+        <p>
+          <label>Your Email: <input type="email" name="email" /></label>
+        </p>
+        <p>
+        <label>Your Role: <select name="role[]" multiple>
+          <option value="leader">Leader</option>
+          <option value="follower">Follower</option>
+          </select></label>
+        </p>
+        <p>
+          <label>Message: <textarea name="message"></textarea></label>
+        </p>
+        <p>
+          <button type="submit">Send</button>
+        </p>
       </form>
     </div>
   )
