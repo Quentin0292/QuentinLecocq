@@ -9,7 +9,7 @@ import Hero from '../components/Hero'
 
 
 function encode(data){
-  return Object.keys(date)
+  return Object.keys(data)
     .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
     .join("&");
 }
@@ -39,7 +39,7 @@ class Contact extends React.Component{
       .then(() => navigateTo(form.getAttribute("action")))
       .catch(error => alert(error));
   }
-  
+
   render(){
     return (
       <Layout>
