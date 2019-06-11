@@ -5,7 +5,7 @@ import Layout from '../components/Layout'
 
 import { Link, graphql, useStaticQuery } from 'gatsby'
 
-import blogStyles from './blog.module.scss'
+import projectsStyles from './projects.module.scss'
 
 import Head from '../components/Head'
 import Hero from '../components/Hero'
@@ -36,11 +36,11 @@ const BlogPage = () => {
     <Layout>
       <Head title="Blog" />
       <Hero className="has-text-centered max-width-tablet">
-        <ol className={blogStyles.posts}>
-        <h1 className="title is-marginless">All Projects</h1>
+        <ol className={projectsStyles.posts}>
+        <h1 className="title">All Projects</h1>
           {data.allMarkdownRemark.edges.map((edge, key) => {
             return (
-              <li key={key} className={blogStyles.post} >
+              <li key={key} className={projectsStyles.post} >
               {/* Après avoir récuperer le slug on l'ajoute ici à Link pour créer un lien entre notre article et la page templates/blog */}
                 <Link to={`/blog/${edge.node.fields.slug}`}>
                   <h2>{edge.node.frontmatter.title}</h2>

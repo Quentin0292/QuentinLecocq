@@ -16,6 +16,7 @@ const HeaderNav = () => {
 
   const routes = [
     { name: 'Home', route: '/' },
+    { name: 'Services', route: '/services'},
     { name: 'Projects', route: '/projects' },
     { name: 'About', route: '/about' },
     { name: 'Contact', route: '/contact' },
