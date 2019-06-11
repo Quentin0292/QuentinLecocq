@@ -1,5 +1,7 @@
 import React from 'react'
 import { navigateTo } from 'gatsby-link'
+import 'bulma/css/bulma.css'
+
 
 // Layout
 import Layout from '../components/Layout'
@@ -53,6 +55,7 @@ class Contact extends React.Component{
             action="/success/"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
+            data-netlify-recaptcha="true"
             onSubmit={this.handleSubmit}
           >
             <input type="hidden" name="form-name" value="contact"/>
@@ -62,28 +65,34 @@ class Contact extends React.Component{
                 <input name="bot-field" onChange={this.handleChange} />
               </label>
             </p>
-            <p>
-              <label>
-                Your name:<br />
-                <input type="text" name="name" onChange={this.handleChange} />
+              <div className="field">
+                <label className="label">
+                  Name<br />
+                  <div className="control">
+                    <input className="input" type="text" name="name" onChange={this.handleChange} required />
+                  </div>
+                </label>
+              </div>
+            <div className="field">
+              <label className="label">
+                Email<br />
+                <div className="control">
+                  <input className="input" type="email" name="email" onChange={this.handleChange} required />
+                </div>
               </label>
-            </p>
-            <p>
-              <label>
-                Your email:<br />
-                <input type="email" name="email" onChange={this.handleChange} />
+            </div>
+            <div className="field">
+              <label className="label">
+                Message<br />
+                <div className="control">
+                  <textarea className="textarea" name="message" onChange={this.handleChange} required />
+                </div>
               </label>
-            </p>
-            <p>
-              <label>
-                Message:<br />
-                <textarea name="message" onChange={this.handleChange} />
-              </label>
-            </p>
-            <p>
-              <button type="submit">Send</button>
-            </p>
-  
+            </div>
+            <div data-netlify-recaptcha="true"></div>
+            <div className="field">
+              <button className="button is-link is-hovered" type="submit">Send</button>
+            </div>
           </form>
         </Hero>
       </Layout>
